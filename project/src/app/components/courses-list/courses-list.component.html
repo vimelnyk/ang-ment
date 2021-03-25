@@ -1,2 +1,10 @@
-<p>courses-list works!</p>
-<app-courses-list-item></app-courses-list-item>
+<ul>
+  <li *ngFor="let course of coursesList; trackBy: trackId">
+    <app-courses-list-item [courseItem]="course" (deleteItemEvent)="deleteItem($event)"></app-courses-list-item>
+  </li>
+</ul>
+<div class="d-flex justify-content-center">
+  <button class="btn btn-link" (click)="learnMore()">Learn more</button>
+</div>
+
+

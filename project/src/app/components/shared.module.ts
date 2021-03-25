@@ -7,6 +7,8 @@ import {PageWrapComponent} from './page-wrap/page-wrap.component';
 import {CoursesListHeaderComponent} from './courses-list-header/courses-list-header.component';
 import {CoursesListComponent} from './courses-list/courses-list.component';
 import {CoursesListItemComponent} from './courses-list-item/courses-list-item.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -30,7 +32,9 @@ import {CoursesListItemComponent} from './courses-list-item/courses-list-item.co
     CoursesListItemComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    FormsModule,
   ]
 })
 export class SharedModule { }
