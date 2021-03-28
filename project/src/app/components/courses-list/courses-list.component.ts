@@ -18,8 +18,8 @@ export class CoursesListComponent implements OnInit {
     console.log('Learn More');
   }
 
-  trackId( index: number, element: Course ): any {
-    return element ? element.id : null;
+  trackId( index: number, element: Course): any {
+    return element.id ;
   }
 
 
