@@ -1,15 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from './app-routing.module';
+import {SharedModule} from './components/shared.module';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
-        AppComponent
+        AppComponent,
+      ],
+      imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SharedModule
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
       ],
     }).compileComponents();
   });
@@ -26,10 +35,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('project');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('project app is running!');
-  });
 });

@@ -19,6 +19,22 @@ describe('CoursesListComponent', () => {
     fixture.detectChanges();
   });
 
+  describe('learnMore()', () => {
+    it('should log message', () => {
+      const consoleSpy = spyOn(console, 'log');
+      component.learnMore();
+      expect(consoleSpy).toHaveBeenCalled();
+    });
+  });
+
+  describe('deleteItem()', () => {
+    it('should log message', () => {
+      const consoleSpy = spyOn(console, 'log');
+      component.deleteItem('value');
+      expect(consoleSpy).toHaveBeenCalledWith('value');
+    });
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
