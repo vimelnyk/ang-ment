@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Course} from '../../models/course';
 import {courses} from '../../mocks/data';
 
@@ -9,6 +9,7 @@ import {courses} from '../../mocks/data';
 })
 export class CoursesListComponent implements OnInit {
   coursesList: Course[] | undefined;
+  @Input() search = '';
   constructor() { }
   deleteItem(message: string): void {
     console.log(message);
@@ -21,7 +22,6 @@ export class CoursesListComponent implements OnInit {
   trackId( index: number, element: Course): any {
     return element.id ;
   }
-
 
   ngOnInit(): void {
     this.coursesList = courses;

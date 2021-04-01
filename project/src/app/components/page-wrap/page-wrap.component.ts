@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-wrap.component.scss']
 })
 export class PageWrapComponent implements OnInit {
-
+  searchText = '';
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  searchQuery(value: string): void {
+    this.searchText = value;
+  }
 }

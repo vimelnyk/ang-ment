@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CoursesListItemComponent } from './courses-list-item.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('CoursesListItemComponent', () => {
   let component: CoursesListItemComponent;
@@ -8,7 +8,10 @@ describe('CoursesListItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoursesListItemComponent ]
+      declarations: [ CoursesListItemComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ],
     })
     .compileComponents();
   });
@@ -19,9 +22,10 @@ describe('CoursesListItemComponent', () => {
     component.courseItem =   {
       id: '2a45',
       title: 'Course2',
-      creationDate: '26-05-2021',
+      creationDate: 1617545081000,
       duration: 240,
-      description: 'test test'
+      description: 'test test',
+      topRated: false
     };
     fixture.detectChanges();
   });

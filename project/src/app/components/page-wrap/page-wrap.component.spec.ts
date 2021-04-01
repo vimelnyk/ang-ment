@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageWrapComponent } from './page-wrap.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('PageWrapComponent', () => {
   let component: PageWrapComponent;
@@ -8,7 +9,10 @@ describe('PageWrapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageWrapComponent ]
+      declarations: [ PageWrapComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ],
     })
     .compileComponents();
   });

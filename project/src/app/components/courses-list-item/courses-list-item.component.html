@@ -1,10 +1,13 @@
-<h2>{{courseItem.title}}</h2>
-<span class="badge badge-secondary">{{courseItem.duration}}min</span>
-<span class="badge badge-secondary">{{courseItem.creationDate}}</span>
-<div>{{courseItem.description}}</div>
+<div appBordered [borderColor]="color"  class="course-border">
+  <h2
+   >Video {{ind+1}} {{courseItem.title | uppercase}} <i [ngClass]="{'d-inline' : courseItem.topRated}" class="d-none">*</i></h2>
 
-<div class="btn-group" role="group" aria-label="Control buttons">
-  <button type="button" class="btn btn-secondary">Edit</button>
-  <button type="button" class="btn btn-secondary" (click)="deleteCurrentItem('delete')">Delete</button>
+  <span class="badge badge-secondary mr-2">{{courseItem.duration | minutesConverter}}</span>
+  <span class="badge badge-secondary">{{courseItem.creationDate | date:'d MMMM, y'}}</span>
+  <div>{{courseItem.description}}</div>
+
+  <div class="btn-group" role="group" aria-label="Control buttons">
+    <button type="button" class="btn btn-secondary">Edit</button>
+    <button type="button" class="btn btn-secondary" (click)="deleteCurrentItem('delete')">Delete</button>
+  </div>
 </div>
-

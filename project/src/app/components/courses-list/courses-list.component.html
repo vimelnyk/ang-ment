@@ -1,8 +1,11 @@
-<ul>
-  <li *ngFor="let course of coursesList; trackBy: trackId">
-    <app-courses-list-item [courseItem]="course" (deleteItemEvent)="deleteItem($event)"></app-courses-list-item>
+{{search}}
+<ul *ngIf="coursesList">
+  <li *ngFor="let course of coursesList | filter:'description': search | orderBy : 'creationDate' ; let i = index; trackBy: trackId">
+    <app-courses-list-item [courseItem]="course" [ind]="i" (deleteItemEvent)="deleteItem($event)"></app-courses-list-item>
   </li>
 </ul>
 <div class="d-flex justify-content-center">
   <button class="btn btn-link" (click)="learnMore()">Learn more</button>
 </div>
+
+<div *ngIf="!coursesList">Nothing Found</div>
